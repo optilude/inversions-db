@@ -6,6 +6,8 @@ Includes a self-contained interactive chord book viewer (`index.html`) and scrip
 
 **Note:** The focus here is inversions with no repeated notes, rather than standard chords, which often have the same note repeated more than once.
 
+The format is similar to [chords-db](https://github.com/tombatossals/chords-db), which focuses more on traditional chord shapes.
+
 ---
 
 ## Contents
