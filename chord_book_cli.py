@@ -323,14 +323,17 @@ optgroup { font-weight: 700; }
     <div id="keys"></div>
   </div>
   <div class="row">
-    <label class="ctrl" for="chord-type">Chord type:</label>
-    <select id="chord-type"></select>
-    <span style="width:16px"></span>
-    <label class="ctrl">Dots:</label>
-    <div id="annotation-btns">
-      <button class="ann-btn active" data-mode="fingering">Fingering</button>
-      <button class="ann-btn" data-mode="notes">Notes</button>
-      <button class="ann-btn" data-mode="intervals">Intervals</button>
+    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+      <label class="ctrl" for="chord-type">Chord type:</label>
+      <select id="chord-type"></select>
+    </div>
+    <div style="display: flex; gap: 8px; align-items: center;">
+      <label class="ctrl">Dots:</label>
+      <div id="annotation-btns">
+        <button class="ann-btn active" data-mode="fingering">Fingering</button>
+        <button class="ann-btn" data-mode="notes">Notes</button>
+        <button class="ann-btn" data-mode="intervals">Intervals</button>
+      </div>
     </div>
   </div>
   <div id="count"></div>
