@@ -170,11 +170,11 @@ def build_data(input_dir: Path) -> dict[str, dict[str, list[dict]]]:
 
         # Sort each chord type's voicings by inversion_number:
         # 0 → 1 → 2 → 3 → 4 → None/-1 (unknown) last
-        def inv_sort_key(d: dict) -> int:
+        # Then, sort in ascending fret order based on starting_fret
+        def inv_sort_key(d: dict) -> tuple[int, int]:
             v = d["inv"]
-            if v is None or v == -1:
-                return 999
-            return v
+            inv = 999 if v is None or v == -1 else v
+            return (inv, d["sf"])
 
         result[key_label] = {
             ct: sorted(voicings, key=inv_sort_key)
@@ -674,7 +674,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument(
         "--input", metavar="DIR", default=".",
-        help="Directory containing a.json, bb.json … b.json  (default: output/)",
+        help="Directory containing a.json, bb.json … b.json  (default: .)",
     )
     parser.add_argument(
         "--output", metavar="FILE", default="index.html",
