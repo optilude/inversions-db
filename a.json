@@ -11659,43 +11659,6 @@
     "fingering_source": "pdf"
   },
   {
-    "chord_type": "7#5",
-    "inversion_number": 0,
-    "starting_fret": 5,
-    "root": "A",
-    "notes": [
-      {
-        "string": 6,
-        "fret": 5,
-        "note_name": "A",
-        "finger": "1"
-      },
-      {
-        "string": 4,
-        "fret": 5,
-        "note_name": "G",
-        "finger": "2"
-      },
-      {
-        "string": 3,
-        "fret": 6,
-        "note_name": "C#",
-        "finger": "4"
-      },
-      {
-        "string": 2,
-        "fret": 5,
-        "note_name": "E",
-        "finger": "3"
-      }
-    ],
-    "omitted_chord_tones": [
-      "F"
-    ],
-    "substitution": null,
-    "fingering_source": "pdf"
-  },
-  {
     "chord_type": "7#9",
     "inversion_number": 0,
     "starting_fret": 11,

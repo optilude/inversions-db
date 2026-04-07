@@ -323,8 +323,10 @@ optgroup { font-weight: 700; }
   font-size: .62rem; font-weight: 600;
 }
 .pill.omit { background: #ede9fe; color: #5b21b6; }
+.pill.add  { background: #d1fae5; color: #065f46; }
 .pill.sub  { background: #fef3c7; color: #92400e; }
 .pill.dup  { background: #f1f5f9; color: #94a3b8; }
+
 </style>
 </head>
 <body>
@@ -405,6 +407,66 @@ function noteToInterval(noteName, rootName) {
 function omitLabel(ot, root) {
   return 'No ' + ot.map(n => DEGREE_NAMES[noteToInterval(n, root)] || n).join(', ');
 }
+
+const EXPECTED_INTERVALS = {
+  "major": ["R", "3", "5"],
+  "minor": ["R", "b3", "5"],
+  "dim": ["R", "b3", "#4"],
+  "aug": ["R", "3", "#5"],
+  "maj7": ["R", "3", "5", "7"],
+  "maj9": ["R", "2", "3", "5", "7"],
+  "maj6": ["R", "3", "5", "6"],
+  "maj6_9": ["R", "2", "3", "5", "6"],
+  "major_cluster": ["R", "3", "5"],
+  "maj7_shell": ["R", "3", "7"],
+  "maj6_shell": ["R", "3", "6"],
+  "m7": ["R", "b3", "5", "b7"],
+  "m9": ["R", "2", "b3", "5", "b7"],
+  "m6": ["R", "b3", "5", "6"],
+  "m6_9": ["R", "2", "b3", "5", "6"],
+  "mmaj7": ["R", "b3", "5", "7"],
+  "minor_cluster": ["R", "b3", "5"],
+  "m7_shell": ["R", "b3", "b7"],
+  "m6_shell": ["R", "b3", "6"],
+  "7": ["R", "3", "5", "b7"],
+  "dom9": ["R", "2", "3", "5", "b7"],
+  "dom11": ["R", "2", "3", "4", "5", "b7"],
+  "7b9": ["R", "b2", "3", "5", "b7"],
+  "7#9": ["R", "b3", "3", "5", "b7"],
+  "7#5": ["R", "3", "#5", "b7"],
+  "dom_cluster": ["R", "3", "5", "b7"],
+  "7_shell": ["R", "3", "b7"],
+  "dim7": ["R", "b3", "#4", "6"],
+  "m7b5": ["R", "b3", "#4", "b7"],
+  "dim7_shell": ["R", "b3", "6"],
+  "aug7": ["R", "3", "#5", "b7"],
+  "aug9": ["R", "2", "3", "#5", "b7"]
+};
+
+function getAddedIntervals(diag, type) {
+  const exp = EXPECTED_INTERVALS[type];
+  if (!exp) return [];
+  const expSet = new Set(exp);
+  const present = new Set();
+  diag.n.forEach(n => {
+    const iv = noteToInterval(n.note_name, diag.r);
+    if (iv !== '?') present.add(iv);
+  });
+  
+  // Sort them based on INTERVAL_NAMES ordering
+  const added = [];
+  INTERVAL_NAMES.forEach(iv => {
+    if (present.has(iv) && !expSet.has(iv)) {
+      added.push(iv);
+    }
+  });
+  return added;
+}
+
+function addedLabel(addedInts) {
+  return 'Add ' + addedInts.map(i => DEGREE_NAMES[i] || i).join(', ');
+}
+
 
 // ---- Key buttons ---------------------------------------------------------
 const keysEl = document.getElementById('keys');
@@ -636,6 +698,15 @@ function render() {
         p.textContent = omitLabel(diag.ot, diag.r);
         meta.appendChild(p);
       }
+      
+      const addedInts = getAddedIntervals(diag, currentType);
+      if (addedInts.length) {
+        const p = document.createElement('span');
+        p.className = 'pill add';
+        p.textContent = addedLabel(addedInts);
+        meta.appendChild(p);
+      }
+
       if (diag.sub) {
         const p = document.createElement('span');
         p.className = 'pill sub';

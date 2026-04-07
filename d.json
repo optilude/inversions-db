@@ -11654,43 +11654,6 @@
     "fingering_source": "pdf"
   },
   {
-    "chord_type": "7#5",
-    "inversion_number": 0,
-    "starting_fret": 10,
-    "root": "D",
-    "notes": [
-      {
-        "string": 6,
-        "fret": 10,
-        "note_name": "D",
-        "finger": "1"
-      },
-      {
-        "string": 4,
-        "fret": 10,
-        "note_name": "C",
-        "finger": "2"
-      },
-      {
-        "string": 3,
-        "fret": 11,
-        "note_name": "F#",
-        "finger": "4"
-      },
-      {
-        "string": 2,
-        "fret": 10,
-        "note_name": "A",
-        "finger": "3"
-      }
-    ],
-    "omitted_chord_tones": [
-      "A#"
-    ],
-    "substitution": null,
-    "fingering_source": "pdf"
-  },
-  {
     "chord_type": "7#9",
     "inversion_number": 0,
     "starting_fret": 4,
