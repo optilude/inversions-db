@@ -274,6 +274,18 @@ optgroup { font-weight: 700; }
 .ann-btn:hover  { background: #2e4a6a; }
 .ann-btn.active { background: #1d6fbf; color: #fff; }
 
+/* String filter */
+#string-filters { display: flex; gap: 0; border-radius: 4px; overflow: hidden; border: 1px solid #3a5570; }
+.str-btn {
+  padding: 5px 10px; border: none; background: #243550; color: #b0cce8;
+  font-size: .78rem; font-weight: 500; cursor: pointer;
+  transition: background .12s, color .12s;
+  border-right: 1px solid #3a5570;
+}
+.str-btn:last-child { border-right: none; }
+.str-btn:hover  { background: #2e4a6a; }
+.str-btn.active { background: #1d6fbf; color: #fff; }
+
 /* Count */
 #count { font-size: .72rem; color: #5a80a0; padding-top: 2px; }
 
@@ -335,6 +347,17 @@ optgroup { font-weight: 700; }
         <button class="ann-btn" data-mode="intervals">Intervals</button>
       </div>
     </div>
+    <div style="display: flex; gap: 8px; align-items: center;">
+      <label class="ctrl">Strings:</label>
+      <div id="string-filters">
+        <button class="str-btn active" data-str="6">6</button>
+        <button class="str-btn active" data-str="5">5</button>
+        <button class="str-btn active" data-str="4">4</button>
+        <button class="str-btn active" data-str="3">3</button>
+        <button class="str-btn active" data-str="2">2</button>
+        <button class="str-btn active" data-str="1">1</button>
+      </div>
+    </div>
   </div>
   <div id="count"></div>
 </div>
@@ -352,6 +375,7 @@ const INV_HEADINGS = __INV_HEADINGS__;
 let currentKey        = KEYS[0][1];
 let currentType       = null;
 let annotationMode    = 'fingering';  // 'fingering' | 'notes' | 'intervals'
+const activeStrings   = new Set([1, 2, 3, 4, 5, 6]);
 
 // ---- Music theory (for interval annotation) ------------------------------
 const CHROMATIC = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
@@ -430,6 +454,21 @@ document.querySelectorAll('.ann-btn').forEach(btn => {
   });
 });
 
+// ---- String filter buttons -----------------------------------------------
+document.querySelectorAll('.str-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const s = parseInt(btn.dataset.str);
+    if (activeStrings.has(s)) {
+      activeStrings.delete(s);
+      btn.classList.remove('active');
+    } else {
+      activeStrings.add(s);
+      btn.classList.add('active');
+    }
+    render();
+  });
+});
+
 function setType(ct) {
   currentType = ct;
   selectEl.value = ct;
@@ -457,13 +496,31 @@ function buildSVGuitarArgs(diag, mode, displayKey) {
   for (let s = 1; s <= 6; s++) {
     const n    = noteMap[s];
     const text = getDotText(n, root, mode, displayKey);
+    
+    let options = undefined;
+    if (n) {
+      const interval = noteToInterval(n.note_name, root);
+      let dotColor = null;
+      if (interval === 'R') dotColor = '#dc2626';
+      else if (interval === 'b3' || interval === '3') dotColor = '#2563eb';
+      else if (interval === '5' || interval === '#5' || interval === '#4') dotColor = '#166534';
+      else if (interval === 'b7' || interval === '7' || (interval === '6' && currentType && currentType.includes('dim'))) dotColor = '#7c3aed';
+      
+      if (dotColor) {
+        options = { color: dotColor, textColor: '#ffffff' };
+        if (text !== undefined) options.text = String(text);
+      } else if (text !== undefined) {
+        options = { text: String(text) };
+      }
+    }
+
     if (!n) {
       fingers.push([s, 'x']);
     } else if (n.fret === 0) {
-      fingers.push(text !== undefined ? [s, 0, text] : [s, 0]);
+      fingers.push(options ? [s, 0, options] : [s, 0]);
     } else {
       const rf = n.fret - sf + 1;
-      fingers.push(text !== undefined ? [s, rf, text] : [s, rf]);
+      fingers.push(options ? [s, rf, options] : [s, rf]);
     }
   }
 
@@ -518,7 +575,13 @@ function render() {
   if (!currentType) { document.getElementById('count').textContent = ''; return; }
   selectEl.value = currentType;
 
-  const voicings = keyData[currentType] || [];
+  let voicings = keyData[currentType] || [];
+
+  // Filter based on active strings
+  voicings = voicings.filter(v => {
+    // If a voicing uses any string not in activeStrings, exclude it
+    return v.n.every(note => activeStrings.has(parseInt(note.string)));
+  });
 
   // Group by inversion_number: Map<inv, [voicing]>
   // inv=null/-1 → placed last under "Unknown"
@@ -612,8 +675,9 @@ function render() {
         new svguitar.SVGuitarChord(el)
           .chord({ fingers, barres })
           .configure({ position, strings: 6, frets: numFrets, strokeWidth: 1.5,
-                       fingerSize: 0.7,
-                       fingerTextSize: annotationMode === 'fingering' ? 22 : 16 })
+                       barreChordStyle: 'arc',
+                       fingerSize: 0.85,
+                       fingerTextSize: annotationMode === 'fingering' ? 26 : 20 })
           .draw();
       } catch (e) {
         el.innerHTML = '<span style="color:#c00;font-size:.65rem">' + e.message + '</span>';
