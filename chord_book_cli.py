@@ -255,7 +255,7 @@ body { font-family: system-ui, sans-serif; background: #f2f4f8; color: #222; }
 
 /* Chord selector */
 label.ctrl { font-size: .78rem; color: #8aa8c4; }
-select#chord-type {
+select#chord-type, select#group-by {
   padding: 5px 10px; border-radius: 4px;
   border: 1px solid #3a5570; background: #243550; color: #b0cce8;
   font-size: .82rem; cursor: pointer; min-width: 160px;
@@ -342,6 +342,14 @@ optgroup { font-weight: 700; }
       <select id="chord-type"></select>
     </div>
     <div style="display: flex; gap: 8px; align-items: center;">
+      <label class="ctrl" for="group-by">Group by:</label>
+      <select id="group-by" style="min-width: unset;">
+        <option value="interval">Interval</option>
+        <option value="string_set">String set</option>
+        <option value="none">None</option>
+      </select>
+    </div>
+    <div style="display: flex; gap: 8px; align-items: center;">
       <label class="ctrl">Dots:</label>
       <div id="annotation-btns">
         <button class="ann-btn active" data-mode="fingering">Fingering</button>
@@ -377,6 +385,7 @@ const INV_HEADINGS = __INV_HEADINGS__;
 let currentKey        = KEYS[0][1];
 let currentType       = null;
 let annotationMode    = 'fingering';  // 'fingering' | 'notes' | 'intervals'
+let groupByMode       = 'interval';   // 'interval' | 'string_set' | 'none'
 const activeStrings   = new Set([1, 2, 3, 4, 5, 6]);
 
 // ---- Music theory (for interval annotation) ------------------------------
@@ -506,6 +515,10 @@ selectEl.querySelectorAll('option').forEach(o => {
 });
 
 selectEl.onchange = () => { currentType = selectEl.value; render(); };
+
+// ---- Group by selector ---------------------------------------------------
+const groupByEl = document.getElementById('group-by');
+groupByEl.onchange = () => { groupByMode = groupByEl.value; render(); };
 
 // ---- Annotation mode buttons ---------------------------------------------
 document.querySelectorAll('.ann-btn').forEach(btn => {
@@ -645,42 +658,84 @@ function render() {
     return v.n.every(note => activeStrings.has(parseInt(note.string)));
   });
 
-  // Group by inversion_number: Map<inv, [voicing]>
-  // inv=null/-1 → placed last under "Unknown"
-  const INV_UNKNOWN = 9999;
-  const invGroups = new Map();
+  // Compute string set data for sorting and grouping
   voicings.forEach(v => {
-    const k = (v.inv === null || v.inv === undefined || v.inv === -1) ? INV_UNKNOWN : v.inv;
-    if (!invGroups.has(k)) invGroups.set(k, []);
-    invGroups.get(k).push(v);
+    const strings = v.n.map(note => parseInt(note.string)).sort((a, b) => a - b);
+    v._ssLabel = strings.join('');
+    v._ssIsOpen = (strings[strings.length - 1] - strings[0] + 1) !== strings.length;
+    v._ssSort = [...strings].reverse().join('');
   });
 
-  // Sort groups: 0,1,2,3,4 … then unknown
-  const sortedKeys = [...invGroups.keys()].sort((a, b) => a - b);
+  const sortVoicings = (a, b) => {
+    const sfA = a.sf || 1;
+    const sfB = b.sf || 1;
+    if (sfA !== sfB) return sfA - sfB;
+    return b._ssSort.localeCompare(a._ssSort);
+  };
+
+  const groups = new Map();
+
+  if (groupByMode === 'interval') {
+    const INV_UNKNOWN = 9999;
+    voicings.forEach(v => {
+      const k = (v.inv === null || v.inv === undefined || v.inv === -1) ? INV_UNKNOWN : v.inv;
+      if (!groups.has(k)) groups.set(k, { key: k, label: k === INV_UNKNOWN ? 'Unknown inversion' : `${INV_HEADINGS[k] || k + 'th Inversion'}`, items: [] });
+      groups.get(k).items.push(v);
+    });
+  } else if (groupByMode === 'string_set') {
+    voicings.forEach(v => {
+      const k = v._ssLabel;
+      if (!groups.has(k)) {
+        groups.set(k, {
+          key: k,
+          label: `Strings ${v._ssLabel.split('').reverse().join('-')} (${v._ssIsOpen ? 'Open' : 'Close'})`,
+          items: [],
+          isOpen: v._ssIsOpen,
+          sortKey: v._ssSort
+        });
+      }
+      groups.get(k).items.push(v);
+    });
+  } else {
+    // none
+    groups.set('all', { key: 'all', label: 'All Voicings', items: voicings });
+  }
+
+  // Sort groups
+  let sortedGroups = [...groups.values()];
+  if (groupByMode === 'interval') {
+    sortedGroups.sort((a, b) => a.key - b.key);
+  } else if (groupByMode === 'string_set') {
+    sortedGroups.sort((a, b) => {
+      if (a.isOpen !== b.isOpen) return a.isOpen ? 1 : -1;
+      return b.sortKey.localeCompare(a.sortKey);
+    });
+  }
 
   let totalShown = 0;
   const frag = document.createDocumentFragment();
   const diagramIds = [];
 
-  sortedKeys.forEach(invKey => {
-    const group = invGroups.get(invKey);
-    totalShown += group.length;
+  sortedGroups.forEach(groupObj => {
+    const groupItems = groupObj.items;
+    groupItems.sort(sortVoicings);
+    totalShown += groupItems.length;
 
     const section = document.createElement('div');
     section.className = 'inv-section';
 
-    const heading = document.createElement('div');
-    heading.className = 'inv-heading';
-    heading.textContent = invKey === INV_UNKNOWN
-      ? `Unknown inversion (${group.length})`
-      : `${INV_HEADINGS[invKey] || invKey + 'th Inversion'} — ${group.length} voicing${group.length !== 1 ? 's' : ''}`;
-    section.appendChild(heading);
+    if (groupByMode !== 'none') {
+      const heading = document.createElement('div');
+      heading.className = 'inv-heading';
+      heading.textContent = `${groupObj.label} — ${groupItems.length} voicing${groupItems.length !== 1 ? 's' : ''}`;
+      section.appendChild(heading);
+    }
 
     const grid = document.createElement('div');
     grid.className = 'card-grid';
 
-    group.forEach((diag, localIdx) => {
-      const globalId = `d_${seq}_${invKey}_${localIdx}`;
+    groupItems.forEach((diag, localIdx) => {
+      const globalId = `d_${seq}_${groupObj.key}_${localIdx}`;
       const card = document.createElement('div');
       card.className = 'card' + (diag.dup !== null && diag.dup !== undefined ? ' dup' : '');
 
