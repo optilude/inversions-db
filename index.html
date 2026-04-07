@@ -8613,6 +8613,16 @@ optgroup { font-weight: 700; }
 /* Count */
 #count { font-size: .72rem; color: #5a80a0; padding-top: 2px; }
 
+/* Responsive layout */
+.ctrl-group { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+@media (max-width: 600px) {
+  .controls-row { flex-direction: column; align-items: stretch; }
+  .ctrl-group { display: grid; grid-template-columns: 85px 1fr; }
+  select#chord-type, select#group-by { min-width: 0; width: 100%; box-sizing: border-box; }
+  #annotation-btns, #string-filters { display: flex; width: 100%; }
+  .ann-btn, .str-btn { flex: 1; }
+}
+
 /* ---- Content ---- */
 #content { padding: 16px; }
 
@@ -8660,12 +8670,12 @@ optgroup { font-weight: 700; }
     <h1>Book of Inversions</h1>
     <div id="keys"></div>
   </div>
-  <div class="row">
-    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+  <div class="row controls-row">
+    <div class="ctrl-group">
       <label class="ctrl" for="chord-type">Chord type:</label>
       <select id="chord-type"></select>
     </div>
-    <div style="display: flex; gap: 8px; align-items: center;">
+    <div class="ctrl-group">
       <label class="ctrl" for="group-by">Group by:</label>
       <select id="group-by" style="min-width: unset;">
         <option value="interval">Interval</option>
@@ -8673,7 +8683,7 @@ optgroup { font-weight: 700; }
         <option value="none">None</option>
       </select>
     </div>
-    <div style="display: flex; gap: 8px; align-items: center;">
+    <div class="ctrl-group">
       <label class="ctrl">Dots:</label>
       <div id="annotation-btns">
         <button class="ann-btn active" data-mode="fingering">Fingering</button>
@@ -8681,7 +8691,7 @@ optgroup { font-weight: 700; }
         <button class="ann-btn" data-mode="intervals">Intervals</button>
       </div>
     </div>
-    <div style="display: flex; gap: 8px; align-items: center;">
+    <div class="ctrl-group">
       <label class="ctrl">Strings:</label>
       <div id="string-filters">
         <button class="str-btn active" data-str="6">6</button>
