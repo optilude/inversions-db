@@ -8678,7 +8678,7 @@ optgroup { font-weight: 700; }
     <div class="ctrl-group">
       <label class="ctrl" for="group-by">Group by:</label>
       <select id="group-by" style="min-width: unset;">
-        <option value="interval">Interval</option>
+        <option value="inversion">Inversion</option>
         <option value="string_set">String set</option>
         <option value="none">None</option>
       </select>
@@ -8719,7 +8719,7 @@ const INV_HEADINGS = {"0": "Root Position", "1": "1st Inversion", "2": "2nd Inve
 let currentKey        = KEYS[0][1];
 let currentType       = null;
 let annotationMode    = 'fingering';  // 'fingering' | 'notes' | 'intervals'
-let groupByMode       = 'interval';   // 'interval' | 'string_set' | 'none'
+let groupByMode       = 'inversion';  // 'inversion' | 'string_set' | 'none'
 const activeStrings   = new Set([1, 2, 3, 4, 5, 6]);
 
 // ---- Music theory (for interval annotation) ------------------------------
@@ -9009,7 +9009,7 @@ function render() {
 
   const groups = new Map();
 
-  if (groupByMode === 'interval') {
+  if (groupByMode === 'inversion') {
     const INV_UNKNOWN = 9999;
     voicings.forEach(v => {
       const k = (v.inv === null || v.inv === undefined || v.inv === -1) ? INV_UNKNOWN : v.inv;
@@ -9037,7 +9037,7 @@ function render() {
 
   // Sort groups
   let sortedGroups = [...groups.values()];
-  if (groupByMode === 'interval') {
+  if (groupByMode === 'inversion') {
     sortedGroups.sort((a, b) => a.key - b.key);
   } else if (groupByMode === 'string_set') {
     sortedGroups.sort((a, b) => {
