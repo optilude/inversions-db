@@ -7014,45 +7014,6 @@
     "fingering_source": "pdf"
   },
   {
-    "chord_type": "m6_9",
-    "inversion_number": null,
-    "starting_fret": 5,
-    "root": "A",
-    "notes": [
-      {
-        "string": 4,
-        "fret": 8,
-        "note_name": "A#",
-        "finger": "2"
-      },
-      {
-        "string": 3,
-        "fret": 9,
-        "note_name": "E",
-        "finger": "4"
-      },
-      {
-        "string": 2,
-        "fret": 0,
-        "note_name": "B",
-        "finger": null
-      },
-      {
-        "string": 1,
-        "fret": 0,
-        "note_name": "E",
-        "finger": null
-      }
-    ],
-    "omitted_chord_tones": [
-      "C",
-      "F#",
-      "A"
-    ],
-    "substitution": null,
-    "fingering_source": "pdf"
-  },
-  {
     "chord_type": "m9",
     "inversion_number": 0,
     "starting_fret": 1,
@@ -22179,6 +22140,598 @@
         "string": 1,
         "fret": 1,
         "note_name": "F",
+        "finger": 1
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 1,
+    "starting_fret": 2,
+    "root": "A",
+    "notes": [
+      {
+        "string": 5,
+        "fret": 2,
+        "note_name": "B",
+        "finger": 1
+      },
+      {
+        "string": 3,
+        "fret": 5,
+        "note_name": "C",
+        "finger": 3
+      },
+      {
+        "string": 2,
+        "fret": 5,
+        "note_name": "E",
+        "finger": 4
+      },
+      {
+        "string": 1,
+        "fret": 2,
+        "note_name": "F#",
+        "finger": 2
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 1,
+    "starting_fret": 4,
+    "root": "A",
+    "notes": [
+      {
+        "string": 6,
+        "fret": 7,
+        "note_name": "B",
+        "finger": 3
+      },
+      {
+        "string": 5,
+        "fret": 7,
+        "note_name": "E",
+        "finger": 4
+      },
+      {
+        "string": 4,
+        "fret": 4,
+        "note_name": "F#",
+        "finger": 1
+      },
+      {
+        "string": 3,
+        "fret": 5,
+        "note_name": "C",
+        "finger": 2
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 1,
+    "starting_fret": 7,
+    "root": "A",
+    "notes": [
+      {
+        "string": 4,
+        "fret": 9,
+        "note_name": "B",
+        "finger": 3
+      },
+      {
+        "string": 3,
+        "fret": 9,
+        "note_name": "E",
+        "finger": 4
+      },
+      {
+        "string": 2,
+        "fret": 7,
+        "note_name": "F#",
+        "finger": 1
+      },
+      {
+        "string": 1,
+        "fret": 8,
+        "note_name": "C",
+        "finger": 2
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 2,
+    "starting_fret": 2,
+    "root": "A",
+    "notes": [
+      {
+        "string": 5,
+        "fret": 3,
+        "note_name": "C",
+        "finger": 2
+      },
+      {
+        "string": 3,
+        "fret": 4,
+        "note_name": "B",
+        "finger": 3
+      },
+      {
+        "string": 2,
+        "fret": 5,
+        "note_name": "E",
+        "finger": 4
+      },
+      {
+        "string": 1,
+        "fret": 2,
+        "note_name": "F#",
+        "finger": 1
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 2,
+    "starting_fret": 4,
+    "root": "A",
+    "notes": [
+      {
+        "string": 6,
+        "fret": 8,
+        "note_name": "C",
+        "finger": 3
+      },
+      {
+        "string": 5,
+        "fret": 7,
+        "note_name": "E",
+        "finger": 2
+      },
+      {
+        "string": 4,
+        "fret": 4,
+        "note_name": "F#",
+        "finger": 1
+      },
+      {
+        "string": 3,
+        "fret": 4,
+        "note_name": "B",
+        "finger": 1
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 2,
+    "starting_fret": 4,
+    "root": "A",
+    "notes": [
+      {
+        "string": 6,
+        "fret": 8,
+        "note_name": "C",
+        "finger": 4
+      },
+      {
+        "string": 4,
+        "fret": 4,
+        "note_name": "F#",
+        "finger": 1
+      },
+      {
+        "string": 3,
+        "fret": 4,
+        "note_name": "B",
+        "finger": 1
+      },
+      {
+        "string": 2,
+        "fret": 5,
+        "note_name": "E",
+        "finger": 2
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 2,
+    "starting_fret": 7,
+    "root": "A",
+    "notes": [
+      {
+        "string": 4,
+        "fret": 10,
+        "note_name": "C",
+        "finger": 4
+      },
+      {
+        "string": 3,
+        "fret": 9,
+        "note_name": "E",
+        "finger": 3
+      },
+      {
+        "string": 2,
+        "fret": 7,
+        "note_name": "F#",
+        "finger": 1
+      },
+      {
+        "string": 1,
+        "fret": 7,
+        "note_name": "B",
+        "finger": 1
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 3,
+    "starting_fret": 1,
+    "root": "A",
+    "notes": [
+      {
+        "string": 4,
+        "fret": 2,
+        "note_name": "E",
+        "finger": 2
+      },
+      {
+        "string": 3,
+        "fret": 4,
+        "note_name": "B",
+        "finger": 4
+      },
+      {
+        "string": 2,
+        "fret": 1,
+        "note_name": "C",
+        "finger": 1
+      },
+      {
+        "string": 1,
+        "fret": 2,
+        "note_name": "F#",
+        "finger": 3
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 3,
+    "starting_fret": 4,
+    "root": "A",
+    "notes": [
+      {
+        "string": 5,
+        "fret": 7,
+        "note_name": "E",
+        "finger": 2
+      },
+      {
+        "string": 3,
+        "fret": 4,
+        "note_name": "B",
+        "finger": 1
+      },
+      {
+        "string": 2,
+        "fret": 7,
+        "note_name": "F#",
+        "finger": 3
+      },
+      {
+        "string": 1,
+        "fret": 8,
+        "note_name": "C",
+        "finger": 4
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 3,
+    "starting_fret": 5,
+    "root": "A",
+    "notes": [
+      {
+        "string": 5,
+        "fret": 7,
+        "note_name": "E",
+        "finger": 2
+      },
+      {
+        "string": 4,
+        "fret": 9,
+        "note_name": "B",
+        "finger": 4
+      },
+      {
+        "string": 3,
+        "fret": 5,
+        "note_name": "C",
+        "finger": 1
+      },
+      {
+        "string": 2,
+        "fret": 7,
+        "note_name": "F#",
+        "finger": 3
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 3,
+    "starting_fret": 9,
+    "root": "A",
+    "notes": [
+      {
+        "string": 6,
+        "fret": 12,
+        "note_name": "E",
+        "finger": 3
+      },
+      {
+        "string": 4,
+        "fret": 9,
+        "note_name": "B",
+        "finger": 1
+      },
+      {
+        "string": 3,
+        "fret": 11,
+        "note_name": "F#",
+        "finger": 2
+      },
+      {
+        "string": 2,
+        "fret": 13,
+        "note_name": "C",
+        "finger": 4
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 3,
+    "starting_fret": 10,
+    "root": "A",
+    "notes": [
+      {
+        "string": 6,
+        "fret": 12,
+        "note_name": "E",
+        "finger": 3
+      },
+      {
+        "string": 5,
+        "fret": 14,
+        "note_name": "B",
+        "finger": 4
+      },
+      {
+        "string": 4,
+        "fret": 10,
+        "note_name": "C",
+        "finger": 1
+      },
+      {
+        "string": 3,
+        "fret": 11,
+        "note_name": "F#",
+        "finger": 2
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 4,
+    "starting_fret": 1,
+    "root": "A",
+    "notes": [
+      {
+        "string": 6,
+        "fret": 2,
+        "note_name": "F#",
+        "finger": 2
+      },
+      {
+        "string": 4,
+        "fret": 2,
+        "note_name": "E",
+        "finger": 3
+      },
+      {
+        "string": 3,
+        "fret": 4,
+        "note_name": "B",
+        "finger": 4
+      },
+      {
+        "string": 2,
+        "fret": 1,
+        "note_name": "C",
+        "finger": 1
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 4,
+    "starting_fret": 2,
+    "root": "A",
+    "notes": [
+      {
+        "string": 6,
+        "fret": 2,
+        "note_name": "F#",
+        "finger": 1
+      },
+      {
+        "string": 5,
+        "fret": 2,
+        "note_name": "B",
+        "finger": 1
+      },
+      {
+        "string": 4,
+        "fret": 2,
+        "note_name": "E",
+        "finger": 1
+      },
+      {
+        "string": 3,
+        "fret": 5,
+        "note_name": "C",
+        "finger": 4
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 4,
+    "starting_fret": 4,
+    "root": "A",
+    "notes": [
+      {
+        "string": 4,
+        "fret": 4,
+        "note_name": "F#",
+        "finger": 1
+      },
+      {
+        "string": 3,
+        "fret": 4,
+        "note_name": "B",
+        "finger": 1
+      },
+      {
+        "string": 2,
+        "fret": 5,
+        "note_name": "E",
+        "finger": 2
+      },
+      {
+        "string": 1,
+        "fret": 8,
+        "note_name": "C",
+        "finger": 4
+      }
+    ],
+    "omitted_chord_tones": [
+      "A"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 4,
+    "starting_fret": 5,
+    "root": "A",
+    "notes": [
+      {
+        "string": 5,
+        "fret": 9,
+        "note_name": "F#",
+        "finger": 2
+      },
+      {
+        "string": 4,
+        "fret": 9,
+        "note_name": "B",
+        "finger": 3
+      },
+      {
+        "string": 3,
+        "fret": 5,
+        "note_name": "C",
+        "finger": 1
+      },
+      {
+        "string": 2,
+        "fret": 5,
+        "note_name": "E",
         "finger": 1
       }
     ],

@@ -22700,5 +22700,560 @@
     ],
     "substitution": null,
     "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 1,
+    "starting_fret": 1,
+    "root": "B",
+    "notes": [
+      {
+        "string": 5,
+        "fret": 4,
+        "note_name": "C#",
+        "finger": 3
+      },
+      {
+        "string": 4,
+        "fret": 4,
+        "note_name": "F#",
+        "finger": 4
+      },
+      {
+        "string": 3,
+        "fret": 1,
+        "note_name": "G#",
+        "finger": 1
+      },
+      {
+        "string": 2,
+        "fret": 3,
+        "note_name": "D",
+        "finger": 2
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 1,
+    "starting_fret": 1,
+    "root": "B",
+    "notes": [
+      {
+        "string": 5,
+        "fret": 4,
+        "note_name": "C#",
+        "finger": 4
+      },
+      {
+        "string": 3,
+        "fret": 1,
+        "note_name": "G#",
+        "finger": 1
+      },
+      {
+        "string": 2,
+        "fret": 3,
+        "note_name": "D",
+        "finger": 3
+      },
+      {
+        "string": 1,
+        "fret": 2,
+        "note_name": "F#",
+        "finger": 2
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 1,
+    "starting_fret": 6,
+    "root": "B",
+    "notes": [
+      {
+        "string": 6,
+        "fret": 9,
+        "note_name": "C#",
+        "finger": 3
+      },
+      {
+        "string": 5,
+        "fret": 9,
+        "note_name": "F#",
+        "finger": 4
+      },
+      {
+        "string": 4,
+        "fret": 6,
+        "note_name": "G#",
+        "finger": 1
+      },
+      {
+        "string": 3,
+        "fret": 7,
+        "note_name": "D",
+        "finger": 2
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 1,
+    "starting_fret": 9,
+    "root": "B",
+    "notes": [
+      {
+        "string": 4,
+        "fret": 11,
+        "note_name": "C#",
+        "finger": 3
+      },
+      {
+        "string": 3,
+        "fret": 11,
+        "note_name": "F#",
+        "finger": 4
+      },
+      {
+        "string": 2,
+        "fret": 9,
+        "note_name": "G#",
+        "finger": 1
+      },
+      {
+        "string": 1,
+        "fret": 10,
+        "note_name": "D",
+        "finger": 2
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 2,
+    "starting_fret": 1,
+    "root": "B",
+    "notes": [
+      {
+        "string": 5,
+        "fret": 5,
+        "note_name": "D",
+        "finger": 4
+      },
+      {
+        "string": 4,
+        "fret": 4,
+        "note_name": "F#",
+        "finger": 3
+      },
+      {
+        "string": 3,
+        "fret": 1,
+        "note_name": "G#",
+        "finger": 1
+      },
+      {
+        "string": 2,
+        "fret": 2,
+        "note_name": "C#",
+        "finger": 2
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 2,
+    "starting_fret": 1,
+    "root": "B",
+    "notes": [
+      {
+        "string": 5,
+        "fret": 5,
+        "note_name": "D",
+        "finger": 4
+      },
+      {
+        "string": 3,
+        "fret": 1,
+        "note_name": "G#",
+        "finger": 1
+      },
+      {
+        "string": 2,
+        "fret": 2,
+        "note_name": "C#",
+        "finger": 2
+      },
+      {
+        "string": 1,
+        "fret": 2,
+        "note_name": "F#",
+        "finger": 3
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 2,
+    "starting_fret": 6,
+    "root": "B",
+    "notes": [
+      {
+        "string": 6,
+        "fret": 10,
+        "note_name": "D",
+        "finger": 3
+      },
+      {
+        "string": 5,
+        "fret": 9,
+        "note_name": "F#",
+        "finger": 2
+      },
+      {
+        "string": 4,
+        "fret": 6,
+        "note_name": "G#",
+        "finger": 1
+      },
+      {
+        "string": 3,
+        "fret": 6,
+        "note_name": "C#",
+        "finger": 1
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 2,
+    "starting_fret": 6,
+    "root": "B",
+    "notes": [
+      {
+        "string": 6,
+        "fret": 10,
+        "note_name": "D",
+        "finger": 4
+      },
+      {
+        "string": 4,
+        "fret": 6,
+        "note_name": "G#",
+        "finger": 1
+      },
+      {
+        "string": 3,
+        "fret": 6,
+        "note_name": "C#",
+        "finger": 1
+      },
+      {
+        "string": 2,
+        "fret": 7,
+        "note_name": "F#",
+        "finger": 2
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 2,
+    "starting_fret": 9,
+    "root": "B",
+    "notes": [
+      {
+        "string": 4,
+        "fret": 12,
+        "note_name": "D",
+        "finger": 4
+      },
+      {
+        "string": 3,
+        "fret": 11,
+        "note_name": "F#",
+        "finger": 3
+      },
+      {
+        "string": 2,
+        "fret": 9,
+        "note_name": "G#",
+        "finger": 1
+      },
+      {
+        "string": 1,
+        "fret": 9,
+        "note_name": "C#",
+        "finger": 1
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 3,
+    "starting_fret": 2,
+    "root": "B",
+    "notes": [
+      {
+        "string": 6,
+        "fret": 2,
+        "note_name": "F#",
+        "finger": 1
+      },
+      {
+        "string": 4,
+        "fret": 6,
+        "note_name": "G#",
+        "finger": 3
+      },
+      {
+        "string": 3,
+        "fret": 6,
+        "note_name": "C#",
+        "finger": 4
+      },
+      {
+        "string": 2,
+        "fret": 3,
+        "note_name": "D",
+        "finger": 2
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 3,
+    "starting_fret": 6,
+    "root": "B",
+    "notes": [
+      {
+        "string": 5,
+        "fret": 9,
+        "note_name": "F#",
+        "finger": 2
+      },
+      {
+        "string": 3,
+        "fret": 6,
+        "note_name": "C#",
+        "finger": 1
+      },
+      {
+        "string": 2,
+        "fret": 9,
+        "note_name": "G#",
+        "finger": 3
+      },
+      {
+        "string": 1,
+        "fret": 10,
+        "note_name": "D",
+        "finger": 4
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 3,
+    "starting_fret": 7,
+    "root": "B",
+    "notes": [
+      {
+        "string": 5,
+        "fret": 9,
+        "note_name": "F#",
+        "finger": 2
+      },
+      {
+        "string": 4,
+        "fret": 11,
+        "note_name": "C#",
+        "finger": 4
+      },
+      {
+        "string": 3,
+        "fret": 7,
+        "note_name": "D",
+        "finger": 1
+      },
+      {
+        "string": 2,
+        "fret": 9,
+        "note_name": "G#",
+        "finger": 3
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 4,
+    "starting_fret": 2,
+    "root": "B",
+    "notes": [
+      {
+        "string": 4,
+        "fret": 6,
+        "note_name": "G#",
+        "finger": 3
+      },
+      {
+        "string": 3,
+        "fret": 6,
+        "note_name": "C#",
+        "finger": 4
+      },
+      {
+        "string": 2,
+        "fret": 3,
+        "note_name": "D",
+        "finger": 2
+      },
+      {
+        "string": 1,
+        "fret": 2,
+        "note_name": "F#",
+        "finger": 1
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 4,
+    "starting_fret": 4,
+    "root": "B",
+    "notes": [
+      {
+        "string": 6,
+        "fret": 4,
+        "note_name": "G#",
+        "finger": 1
+      },
+      {
+        "string": 5,
+        "fret": 4,
+        "note_name": "C#",
+        "finger": 1
+      },
+      {
+        "string": 4,
+        "fret": 4,
+        "note_name": "F#",
+        "finger": 1
+      },
+      {
+        "string": 3,
+        "fret": 7,
+        "note_name": "D",
+        "finger": 4
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
+  },
+  {
+    "chord_type": "m6_9",
+    "inversion_number": 4,
+    "starting_fret": 7,
+    "root": "B",
+    "notes": [
+      {
+        "string": 5,
+        "fret": 11,
+        "note_name": "G#",
+        "finger": 2
+      },
+      {
+        "string": 4,
+        "fret": 11,
+        "note_name": "C#",
+        "finger": 3
+      },
+      {
+        "string": 3,
+        "fret": 7,
+        "note_name": "D",
+        "finger": 1
+      },
+      {
+        "string": 2,
+        "fret": 7,
+        "note_name": "F#",
+        "finger": 1
+      }
+    ],
+    "omitted_chord_tones": [
+      "B"
+    ],
+    "substitution": null,
+    "fingering_source": "algorithmic"
   }
 ]
